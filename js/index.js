@@ -40,3 +40,37 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+//Nav Selectors
+const navBar = document.querySelector('nav');
+const navItems = navBar.querySelectorAll('a'); //This is a nodeList (Array like item)
+for(let i = 0; i < navItems.length; i++){
+  //Using template literals to make changes to nav-item content
+  navItems[i].innerHTML = siteContent.nav[`nav-item-${i+1}`];
+}
+
+//cta
+const titleArea = document.querySelector('.cta-text');
+
+const titleName = titleArea.querySelector('h1');
+titleName.innerHTML = siteContent.cta['h1'];
+
+const titleButton = titleArea.querySelector('button');
+titleButton.innerHTML = siteContent.cta['button'];
+
+const headerImage = document.getElementById('cta-img');
+headerImage.setAttribute('src', siteContent.cta['img-src']);
+
+//main-content
+const topContent = document.querySelector('.top-content');
+const topContentDiv = topContent.querySelectorAll('.text-content');
+topContentDiv[0].querySelector('h4').innerHTML = siteContent['main-content']['features-h4'];
+topContentDiv[0].querySelector('p').innerHTML = siteContent['main-content']['features-content'];
+
+topContentDiv[1].querySelector('h4').innerHTML = siteContent['main-content']['about-h4'];
+topContentDiv[1].querySelector('p').innerHTML = siteContent['main-content']['about-content'];
+
+const middleImage = document.getElementById('middle-img');
+middleImage.setAttribute('src', siteContent["main-content"]['middle-img-src']);
+
+
