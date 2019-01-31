@@ -41,13 +41,30 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+
+
 //Nav Selectors
 const navBar = document.querySelector('nav');
 const navItems = navBar.querySelectorAll('a'); //This is a nodeList (Array like item)
+
+
 for(let i = 0; i < navItems.length; i++){
   //Using template literals to make changes to nav-item content
   navItems[i].textContent = siteContent.nav[`nav-item-${i+1}`];
+  //Change each "a" to green color
+  navItems[i].style.color = 'green';
 }
+
+//Task 4 Append/Prepend Child
+const aTag = document.createElement('a');
+aTag.setAttribute('href', '#');
+aTag.innerText = 'GitHub';
+navBar.appendChild(aTag);
+
+const aTagTwo = document.createElement('a');
+aTagTwo.setAttribute('href', '#');
+aTagTwo.innerText = 'Facebook';
+navBar.prepend(aTagTwo)
 
 //cta
 const titleArea = document.querySelector('.cta-text');
@@ -99,5 +116,3 @@ contactParagraph[2].textContent = siteContent['contact']['email'];
 const footer = document.querySelector('footer');
 footer.querySelector('p').textContent = siteContent['footer']['copyright'];
 
-//Task 4 Add new content
-navItems.style.color = 'green';
