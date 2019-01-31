@@ -46,17 +46,17 @@ const navBar = document.querySelector('nav');
 const navItems = navBar.querySelectorAll('a'); //This is a nodeList (Array like item)
 for(let i = 0; i < navItems.length; i++){
   //Using template literals to make changes to nav-item content
-  navItems[i].innerHTML = siteContent.nav[`nav-item-${i+1}`];
+  navItems[i].textContent = siteContent.nav[`nav-item-${i+1}`];
 }
 
 //cta
 const titleArea = document.querySelector('.cta-text');
 
 const titleName = titleArea.querySelector('h1');
-titleName.innerHTML = siteContent.cta['h1'];
+titleName.textContent = siteContent.cta['h1'];
 
 const titleButton = titleArea.querySelector('button');
-titleButton.innerHTML = siteContent.cta['button'];
+titleButton.textContent = siteContent.cta['button'];
 
 const headerImage = document.getElementById('cta-img');
 headerImage.setAttribute('src', siteContent.cta['img-src']);
@@ -64,11 +64,11 @@ headerImage.setAttribute('src', siteContent.cta['img-src']);
 //main-content top-content
 const topContent = document.querySelector('.top-content');
 const topContentDiv = topContent.querySelectorAll('.text-content');
-topContentDiv[0].querySelector('h4').innerHTML = siteContent['main-content']['features-h4'];
-topContentDiv[0].querySelector('p').innerHTML = siteContent['main-content']['features-content'];
+topContentDiv[0].querySelector('h4').textContent = siteContent['main-content']['features-h4'];
+topContentDiv[0].querySelector('p').textContent = siteContent['main-content']['features-content'];
 
-topContentDiv[1].querySelector('h4').innerHTML = siteContent['main-content']['about-h4'];
-topContentDiv[1].querySelector('p').innerHTML = siteContent['main-content']['about-content'];
+topContentDiv[1].querySelector('h4').textContent = siteContent['main-content']['about-h4'];
+topContentDiv[1].querySelector('p').textContent = siteContent['main-content']['about-content'];
 
 //main-content middle-img
 const middleImage = document.getElementById('middle-img');
@@ -77,24 +77,27 @@ middleImage.setAttribute('src', siteContent["main-content"]['middle-img-src']);
 //main-content bottom-content
 const bottomContent = document.querySelector('.bottom-content');
 const bottomContentDiv = bottomContent.querySelectorAll('.text-content');
-bottomContentDiv[0].querySelector('h4').innerHTML = siteContent['main-content']['services-h4'];
-bottomContentDiv[0].querySelector('p').innerHTML = siteContent['main-content']['services-content'];
+bottomContentDiv[0].querySelector('h4').textContent = siteContent['main-content']['services-h4'];
+bottomContentDiv[0].querySelector('p').textContent = siteContent['main-content']['services-content'];
 
-bottomContentDiv[1].querySelector('h4').innerHTML = siteContent['main-content']['product-h4'];
-bottomContentDiv[1].querySelector('p').innerHTML = siteContent['main-content']['product-content'];
+bottomContentDiv[1].querySelector('h4').textContent = siteContent['main-content']['product-h4'];
+bottomContentDiv[1].querySelector('p').textContent = siteContent['main-content']['product-content'];
 
-bottomContentDiv[2].querySelector('h4').innerHTML = siteContent['main-content']['vision-h4'];
-bottomContentDiv[2].querySelector('p').innerHTML = siteContent['main-content']['vision-content'];
+bottomContentDiv[2].querySelector('h4').textContent = siteContent['main-content']['vision-h4'];
+bottomContentDiv[2].querySelector('p').textContent = siteContent['main-content']['vision-content'];
 
 //contact
 const contact = document.querySelector('.contact');
-contact.querySelector('h4').innerHTML = siteContent['contact']['contact-h4'];
+contact.querySelector('h4').textContent = siteContent['contact']['contact-h4'];
 
 const contactParagraph = contact.querySelectorAll('p');
-contactParagraph[0].innerHTML = siteContent['contact']['address'];
-contactParagraph[1].innerHTML = siteContent['contact']['phone'];
-contactParagraph[2].innerHTML = siteContent['contact']['email'];
+contactParagraph[0].textContent = siteContent['contact']['address'];
+contactParagraph[1].textContent = siteContent['contact']['phone'];
+contactParagraph[2].textContent = siteContent['contact']['email'];
 
 //footer
 const footer = document.querySelector('footer');
-footer.querySelector('p').innerHTML = siteContent['footer']['copyright'];
+footer.querySelector('p').textContent = siteContent['footer']['copyright'];
+
+//Task 4 Add new content
+navItems.style.color = 'green';
